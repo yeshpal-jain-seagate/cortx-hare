@@ -81,7 +81,7 @@ def _run_qconsumer_thread(planner: WorkPlanner, motr: Motr,
 # place, this will be reverted
 def _run_stats_updater_thread(motr: Motr,
                               consul_util: ConsulUtil) -> StoppableThread:
-    return _run_thread(FsStatsUpdater(motr, consul_util, interval_sec=600))
+    return _run_thread(FsStatsUpdater(motr, consul_util, interval_sec=30))
 
 
 # TODO this is work around and once the proper fix for CORTX-27707 is in
